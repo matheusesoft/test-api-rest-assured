@@ -1,0 +1,176 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "idLivro",
+    "nome",
+    "quantidadeDePaginas"
+  ],
+  "properties": {
+    "idLivro": {
+      "$id": "#/properties/idLivro",
+      "type": "integer",
+      "title": "The Idlivro Schema",
+      "default": 0,
+      "examples": [
+        2
+      ]
+    },
+    "nome": {
+      "$id": "#/properties/nome",
+      "type": "string",
+      "title": "The Nome Schema",
+      "default": "",
+      "examples": [
+        "Seu Futuro Financeiro"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "quantidadeDePaginas": {
+      "$id": "#/properties/quantidadeDePaginas",
+      "type": "integer",
+      "title": "The Quantidadedepaginas Schema",
+      "default": 0,
+      "examples": [
+        156
+      ]
+    },
+    "dataDeLancamento": {
+      "$id": "#/properties/dataDeLancamento",
+      "type": "string",
+      "title": "The Datadelancamento Schema",
+      "default": "",
+      "examples": [
+        "03/11/2008"
+      ],
+      "pattern": "^(.*)$",
+      "format": "date"
+    },
+    "autor": {
+      "$id": "#/properties/autor",
+      "type": "object",
+      "title": "The Autor Schema",
+      "default": null,
+      "required": [
+        "idAutor",
+        "nome",
+        "dataDeNascimento",
+        "sobre"
+      ],
+      "properties": {
+        "idAutor": {
+          "$id": "#/properties/autor/properties/idAutor",
+          "type": "integer",
+          "title": "The Idautor Schema",
+          "default": 0,
+          "examples": [
+            2
+          ]
+        },
+        "nome": {
+          "$id": "#/properties/autor/properties/nome",
+          "type": "string",
+          "title": "The Nome Schema",
+          "default": "",
+          "examples": [
+            "Louis Frankenberg"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "dataDeNascimento": {
+          "$id": "#/properties/autor/properties/dataDeNascimento",
+          "type": "string",
+          "title": "The Datadenascimento Schema",
+          "default": "",
+          "examples": [
+            "19/02/1996"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "sobre": {
+          "$id": "#/properties/autor/properties/sobre",
+          "type": "string",
+          "title": "The Sobre Schema",
+          "default": "",
+          "examples": [
+            "É um músico."
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "categoria": {
+      "$id": "#/properties/categoria",
+      "type": "object",
+      "title": "The Categoria Schema",
+      "default": null,
+      "required": [
+        "idCategoria",
+        "nome",
+        "descricao"
+      ],
+      "properties": {
+        "idCategoria": {
+          "$id": "#/properties/categoria/properties/idCategoria",
+          "type": "integer",
+          "title": "The Idcategoria Schema",
+          "default": 0,
+          "examples": [
+            2
+          ]
+        },
+        "nome": {
+          "$id": "#/properties/categoria/properties/nome",
+          "type": "string",
+          "title": "The Nome Schema",
+          "default": "",
+          "examples": [
+            "Finanças"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "descricao": {
+          "$id": "#/properties/categoria/properties/descricao",
+          "type": "string",
+          "title": "The Descricao Schema",
+          "default": "",
+          "examples": [
+            "Literatura adultos"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "quantidadeEmEstoque": {
+      "$id": "#/properties/quantidadeEmEstoque",
+      "type": "integer",
+      "title": "The Quantidadeemestoque Schema",
+      "default": 0,
+      "examples": [
+        20
+      ]
+    },
+    "preco": {
+      "$id": "#/properties/preco",
+      "type": "number",
+      "title": "The Preco Schema",
+      "default": 0.0,
+      "examples": [
+        30.99
+      ]
+    },
+    "isbn": {
+      "$id": "#/properties/isbn",
+      "type": "string",
+      "title": "The Isbn Schema",
+      "default": "",
+      "examples": [
+        "15616156156"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}
