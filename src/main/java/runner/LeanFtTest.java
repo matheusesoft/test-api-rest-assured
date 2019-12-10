@@ -12,7 +12,7 @@ import unittesting.*;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = { "com.hp.lft.cucumberv4.CucumberReporter" }, 
-	glue = "step", features = "classpath:features")
+	glue = "step", features = "classpath:features", junit = "--step-notifications")
 public class LeanFtTest extends UnitTestClassBase {
 
 	public LeanFtTest() {

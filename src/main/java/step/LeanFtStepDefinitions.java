@@ -11,6 +11,10 @@ import org.junit.Test;
 
 import com.sun.xml.xsom.impl.scd.Iterators.Map;
 
+import api.ApiBaseTest;
+import api.DeleteMethods;
+import api.GetMethods;
+import api.PostMethods;
 import cucumber.api.java.Before;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
@@ -19,10 +23,6 @@ import io.cucumber.datatable.DataTable;
 import io.restassured.RestAssured;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.ValidatableResponse;
-import unittesting.ApiBaseTest;
-import unittesting.DeleteMethods;
-import unittesting.GetMethods;
-import unittesting.PostMethods;
 
 public class LeanFtStepDefinitions {
 	private static ValidatableResponse response = null;
@@ -40,24 +40,18 @@ public class LeanFtStepDefinitions {
 	@Quando("^executo o metodo POST para os livros$")
 	public static void postCriarLivros(DataTable livros) throws Throwable {
 		List<List<String>> listaLivros = livros.asLists();
-		listaLivros = listaLivros.stream().collect(Collectors.toList());
-		listaLivros.remove(0); //remover o cabeçalho do DataTable
 		PostMethods.createLivros(listaLivros);
 	}
 	
 	@Quando("^executo o metodo POST para os autores$")
 	public static void postCriarAutores(DataTable autores) throws Throwable {
 		List<List<String>> listaAutores = autores.asLists();
-		listaAutores = listaAutores.stream().collect(Collectors.toList());
-		listaAutores.remove(0); //remover o cabeçalho do DataTable
 		PostMethods.createAutores(listaAutores);
 	}
 	
 	@Quando("^executo o metodo POST para as categorias$")
 	public static void postCriarCategorias(DataTable categorias) throws Throwable {
 		List<List<String>> listaCateogrias = categorias.asLists();
-		listaCateogrias = listaCateogrias.stream().collect(Collectors.toList());
-		listaCateogrias.remove(0); //remover o cabeçalho do DataTable
 		PostMethods.createCategorias(listaCateogrias);
 	}
 	
@@ -95,7 +89,7 @@ public class LeanFtStepDefinitions {
 	public void teste() throws Throwable {
 		String nome =  "O Menino Maluquinho";
 		ApiBaseTest.setupRequisitions();
-		RestAssured.given().when().get(ApiBaseTest.rotas.get("livros")+"?nome={nome}", "O Menino Maluquinho").then().extract().response().body().prettyPrint();
+		RestAssured.given().when().get(ApiBaseTest.livros+"?nome={nome}", "O Menino Maluquinho").then().extract().response().body().prettyPrint();
 	}
 	
 }

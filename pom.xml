@@ -9,7 +9,12 @@
 	<packaging>jar</packaging>
 	<name>LeanFT JUnit Test using Cucumber</name>
 	<description>LeanFT JUnit Test using Cucumber</description>
-
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<test.src.dir>src/test/java</test.src.dir>
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -72,21 +77,21 @@
 			<artifactId>rest-assured</artifactId>
 			<version>4.0.0</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>json-schema-validator</artifactId>
 			<version>4.0.0</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/io.rest-assured/json-path -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>json-path</artifactId>
 			<version>4.0.0</version>
 		</dependency>
-		
+
 	</dependencies>
 
 	<repositories>
@@ -94,10 +99,6 @@
 			name</name> <url>URL of the repository containing the LeanFT jar files</url> 
 			</repository> -->
 	</repositories>
-
-	<properties>
-		<test.src.dir>src/test/java</test.src.dir>
-	</properties>
 
 	<build>
 		<testSourceDirectory>${test.src.dir}</testSourceDirectory>

@@ -1,4 +1,4 @@
-package unittesting;
+package api;
 
 import static io.restassured.RestAssured.given;
 
@@ -16,7 +16,7 @@ public class PostMethods {
 		String livroJson = RepositoryJSON.getCreateLivroJson(nome, quantidadeDePaginas, dataDeLancamento, autorNome,
 				categoriaNome, quantidadeEmEstoque, preco, isbn);
 
-		ValidatableResponse res = given().body(livroJson.toString()).when().post(ApiBaseTest.rotas.get("livro-adiciona"))
+		ValidatableResponse res = given().body(livroJson.toString()).when().post(ApiBaseTest.adicionarLivro)
 				.then();
 		Reporter.reportEvent("Livro gerado : " + res.extract().response().body().prettyPrint(),
 				res.extract().response().getStatusLine());
@@ -37,7 +37,7 @@ public class PostMethods {
 		livrosJson += "]";
 
 		ValidatableResponse res = given().body(livrosJson.toString()).when()
-				.post(ApiBaseTest.rotas.get("livros-adiciona-todos")).then();
+				.post(ApiBaseTest.adicionarLivros).then();
 
 		Reporter.reportEvent("Livros gerados: " + res.extract().response().body().prettyPrint(),
 				res.extract().response().getStatusLine());
@@ -49,7 +49,7 @@ public class PostMethods {
 		String autorJson;
 		for (List<String> list : listaAutores) {
 			autorJson = RepositoryJSON.getCreateAutorJson(list.get(0), list.get(1), list.get(2), list.get(3));
-			ValidatableResponse res = given().body(autorJson.toString()).when().post(ApiBaseTest.rotas.get("autor-adiciona")).then();
+			ValidatableResponse res = given().body(autorJson.toString()).when().post(ApiBaseTest.adicionarAutor).then();
 			Reporter.reportEvent("Autor gerado: " + res.extract().response().body().prettyPrint(), res.extract().response().getStatusLine());
 		}
 
@@ -61,7 +61,7 @@ public class PostMethods {
 		String categoriaJson;
 		for (List<String> list : listaCategorias) {
 			categoriaJson = RepositoryJSON.getCreateCategoriaJson(list.get(0), list.get(1));
-			ValidatableResponse res = given().body(categoriaJson.toString()).when().post(ApiBaseTest.rotas.get("categoria-adiciona")).then();
+			ValidatableResponse res = given().body(categoriaJson.toString()).when().post(ApiBaseTest.adicionarCategoria).then();
 			Reporter.reportEvent("Categoria gerada: " + res.extract().response().body().prettyPrint(), res.extract().response().getStatusLine());
 		}
 

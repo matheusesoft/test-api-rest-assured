@@ -1,9 +1,5 @@
-package unittesting;
+package api;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import com.hp.lft.sdk.web.Browser;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -20,19 +16,13 @@ public class ApiBaseTest {
 	public static RequestSpecification reqSpec;
 	public static ResponseSpecification resSpec;
 	
-	@SuppressWarnings("serial")
-	public static final Map<String, String> rotas = new HashMap<String, String>() {
-		{
-			put("livros", "livros");
-			put("livro-adiciona", "livros/adiciona");
-			put("autor-adiciona", "autores");
-			put("categoria-adiciona", "categorias");
-			put("livros-adiciona-todos", "livros/adiciona/todos");
-			put("livros-lista-todos", "livros/lista/todos");
-		}
-	};
-	
-	protected Browser browser;
+	public static String livros = "livros";
+	public static String adicionarLivro = "livros/adiciona";
+	public static String adicionarLivros = "livros/adiciona/todos";
+	public static String listarLivros = "livros/lista/todos";
+	public static String adicionarAutor = "autores";
+	public static String adicionarCategoria = "categorias";
+	public static String limparTudo = "livros/delete/all/cascade";
 	
 	public static void setupRequisitions(int code) {
 		RequestSpecBuilder req = new RequestSpecBuilder();
@@ -40,7 +30,7 @@ public class ApiBaseTest {
 		req.setContentType(ContentType.JSON);
 		req.setAccept(ContentType.JSON);
 		req.setRelaxedHTTPSValidation();
-		req.setBaseUri("http://127.0.0.1:8080/api/v1/");
+		req.setBaseUri("http://127.0.0.1:8080/");
 
 		reqSpec = req.build();
 
