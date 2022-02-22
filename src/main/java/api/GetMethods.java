@@ -1,23 +1,18 @@
 package api;
 
-import com.hp.lft.report.Reporter;
 import io.restassured.RestAssured;
 import io.restassured.response.ValidatableResponse;
 
 public class GetMethods {
 
-	public static ValidatableResponse getLivro(String nome) throws Throwable {
+	public static ValidatableResponse getComment(String name) throws Throwable {
 		ApiBaseTest.setupRequisitions();
-		ValidatableResponse res = RestAssured.given().when().get(ApiBaseTest.livros+"?nome={nome}", nome).then();
-		Reporter.reportEvent(res.extract().response().body().prettyPrint(), res.extract().response().getStatusLine());
-		return res;
+		return RestAssured.given().when().get(ApiBaseTest.comments+"?name={nome}", name).then();
 	}
 	
-	public static ValidatableResponse getLivros() throws Throwable {
+	public static ValidatableResponse getComments() throws Throwable {
 		ApiBaseTest.setupRequisitions();
-		ValidatableResponse res = RestAssured.given().when().get(ApiBaseTest.listarLivros).then();
-		Reporter.reportEvent(res.extract().response().body().prettyPrint(), res.extract().response().getStatusLine());
-		return res;
+		return RestAssured.given().when().get(ApiBaseTest.comments).then();
 	}
 
 }

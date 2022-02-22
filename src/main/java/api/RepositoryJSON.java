@@ -2,42 +2,44 @@ package api;
 
 public class RepositoryJSON {	
 	
-	public static String getCreateLivroJson(String nome, String quantidadeDePaginas, String dataDeLancamento, String autorNome, String categoriaNome, int quantidadeEmEstoque, double preco, String isbn) {
-		String createLivroJson = ""
-				+ "{" + 
-				"        \"nome\": \""+nome+"\"," + 
-				"        \"quantidadeDePaginas\": "+quantidadeDePaginas+"," + 
-				"        \"dataDeLancamento\": \""+dataDeLancamento+"\"," + 
-				"        \"autor\": {" + 
-				"            \"nome\": \""+autorNome+"\"" + 
-				"        }," + 
-				"        \"categoria\": {" + 
-				"            \"nome\": \""+categoriaNome+"\"" + 
-				"        }," + 
-				"        \"quantidadeEmEstoque\": "+quantidadeEmEstoque+"," + 
-				"        \"preco\": "+preco+"," + 
-				"        \"isbn\": \""+isbn+"\"" + 
-				"    }";
-		return createLivroJson;
+	public static String getCreateUser(String name, String username, String email) {
+		String createUserJson = ""
+				+ " {" + 
+				"    \"name\": \""+name+"\"," + 
+				"    \"username\": \""+username+"\"," + 
+				"    \"email\": \""+email+"\"," + 
+				"    \"address\": {" + 
+				"      \"street\": \"Kulas Light\"," + 
+				"      \"suite\": \"Apt. 556\"," + 
+				"      \"city\": \"Gwenborough\"," + 
+				"      \"zipcode\": \"92998-3874\"," + 
+				"      \"geo\": {" + 
+				"        \"lat\": \"-37.3159\"," + 
+				"        \"lng\": \"81.1496\"" + 
+				"      }" + 
+				"    }," + 
+				"    \"phone\": \"1-770-736-8031 x56442\"," + 
+				"    \"website\": \"hildegard.org\"," + 
+				"    \"company\": {" + 
+				"      \"name\": \"Romaguera-Crona\"," + 
+				"      \"catchPhrase\": \"Multi-layered client-server neural-net\"," + 
+				"      \"bs\": \"harness real-time e-markets\"" + 
+				"    }" + 
+				"  }";
+		return createUserJson;
 	}	
 	
-	public static String getCreateAutorJson(String nome, String email, String dataDeNascimento, String sobre) {
-		String createAutorJson = ""
-				+ "	{" + 
-				"      \"nome\": \""+nome+"\"," + 
-				"      \"email\": \""+email+"\"," + 
-				"      \"dataDeNascimento\": \""+dataDeNascimento+"\"," + 
-				"      \"sobre\": \""+sobre+"\"" + 
-				"	}";
-		return createAutorJson;
+	public static String updateLatLngUser(String lat, String lng) {
+		String updateJson = ""
+				+ " {" + 
+				"    \"address\": {" + 
+				"      \"geo\": {" + 
+				"        \"lat\": \""+lat+"\"," + 
+				"        \"lng\": \""+lng+"\"" + 
+				"      }" + 
+				"    }" + 
+				"  }";
+		return updateJson;
 	}	
 	
-	public static String getCreateCategoriaJson(String nome, String descricao) {
-		String createCategoriaJson = ""
-				+ "	{" + 
-				"      \"nome\": \""+nome+"\"," + 
-				"      \"descricao\": \""+descricao+"\"" + 
-				"	}";
-		return createCategoriaJson;
-	}	
 }

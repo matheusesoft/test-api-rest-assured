@@ -9,47 +9,17 @@
 	<packaging>jar</packaging>
 	<name>LeanFT JUnit Test using Cucumber</name>
 	<description>LeanFT JUnit Test using Cucumber</description>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<test.src.dir>src/test/java</test.src.dir>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.hp.lft</groupId>
-			<artifactId>sdk</artifactId>
-			<version>14.53.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.hp.lft</groupId>
-			<artifactId>report</artifactId>
-			<version>14.53.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.hp.lft</groupId>
-			<artifactId>unittesting</artifactId>
-			<version>14.53.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.hp.lft</groupId>
-			<artifactId>verifications</artifactId>
-			<version>14.53.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.hp.lft</groupId>
-			<artifactId>cucumberv4</artifactId>
-			<version>14.53.0</version>
 		</dependency>
 
 		<dependency>
@@ -91,7 +61,6 @@
 			<artifactId>json-path</artifactId>
 			<version>4.0.0</version>
 		</dependency>
-
 	</dependencies>
 
 	<repositories>
